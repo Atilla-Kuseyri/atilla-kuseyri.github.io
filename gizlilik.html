@@ -3,30 +3,178 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Gizlilik Politikası</title>
+<title>Gizlilik Politikası / Privacy Policy</title>
+<style>
+  :root {
+    --accent: #4C1D95;
+    --accent2: #6D28D9;
+    --link: #7C3AED;
+    --ink: #2b2b33;
+    --muted: #5a6675;
+    --line: #e6e3ef;
+    --bg: #f7f6fb;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: var(--ink);
+    background: var(--bg);
+    line-height: 1.65;
+  }
+  .wrap { max-width: 720px; margin: 0 auto; padding: 0 20px 64px; }
+  header {
+    background: var(--accent);
+    color: #fff;
+    padding: 38px 20px 32px;
+    text-align: center;
+  }
+  header h1 { margin: 0 0 4px; font-size: 24px; }
+  header .tag { color: #d6c9f0; font-size: 15px; }
+  .toggle { display: flex; gap: 8px; justify-content: center; margin: 20px 0 0; }
+  .toggle button {
+    border: 1px solid rgba(255,255,255,.4);
+    background: transparent; color: #fff;
+    padding: 6px 16px; border-radius: 999px; font-size: 14px; cursor: pointer;
+  }
+  .toggle button.active { background: #fff; border-color: #fff; color: var(--accent); font-weight: 600; }
+  section.lang { display: none; }
+  section.lang.active { display: block; }
+  h2 { font-size: 19px; margin: 32px 0 8px; color: var(--accent2); }
+  p { margin: 8px 0; }
+  .lead {
+    background: #fff; border: 1px solid var(--line);
+    border-left: 4px solid var(--accent2);
+    padding: 15px 18px; border-radius: 8px; margin: 22px 0;
+  }
+  ul { margin: 8px 0; padding-left: 22px; }
+  li { margin: 5px 0; }
+  .updated { color: var(--muted); font-size: 14px; }
+  a { color: var(--link); }
+  .contact { background: #fff; border: 1px solid var(--line); border-radius: 8px; padding: 15px 18px; margin-top: 24px; }
+  footer { text-align: center; color: var(--muted); font-size: 13px; padding: 22px 20px; }
+</style>
 </head>
 <body>
-<h1>Gizlilik Politikası</h1>
-<p>Son güncelleme: Mayıs 2026</p>
+<header>
+  <h1>Gizlilik Politikası · Privacy Policy</h1>
+  <div class="tag">Atilla Kuseyri</div>
+  <div class="toggle">
+    <button id="btn-tr" class="active" onclick="setLang('tr')">Türkçe</button>
+    <button id="btn-en" onclick="setLang('en')">English</button>
+  </div>
+</header>
 
-<h2>Toplanan Bilgiler</h2>
-<p>Uygulamalarımız kişisel kimlik bilgisi toplamaz. Girdiğiniz veriler yalnızca cihazınızda yerel olarak saklanır.</p>
+<div class="wrap">
 
-<h2>Üçüncü Taraf Servisler</h2>
+  <!-- ==================== TÜRKÇE ==================== -->
+  <section id="tr" class="lang active">
+    <p class="updated">Son güncelleme: 26 Temmuz 2026</p>
 
-<h3>Yapay Zeka Servisi (Groq)</h3>
-<p>Bazı uygulamalarımız Groq (groq.com) yapay zeka servisini kullanmaktadır. Bu servise yalnızca uygulama içinde girdiğiniz metin verileri iletilir. Kişisel kimlik bilgisi, konum veya cihaz bilgisi paylaşılmaz. Groq'un gizlilik politikası için: <a href="https://groq.com/privacy-policy">groq.com/privacy-policy</a></p>
+    <div class="lead">
+      Bu gizlilik politikası, Atilla Kuseyri tarafından geliştirilen ve App Store'da yayınlanan tüm uygulamalar için geçerlidir.
+    </div>
 
-<h3>Fotoğraf Servisi (Unsplash)</h3>
-<p>Bazı uygulamalarımız Unsplash (unsplash.com) fotoğraf servisini kullanmaktadır. Uygulama içeriğiyle ilgili arama terimleri Unsplash'e iletilir. Kişisel kimlik bilgisi, konum veya cihaz bilgisi paylaşılmaz. Fotoğraflar Unsplash fotoğrafçılarına atıfla gösterilmektedir. Unsplash'in gizlilik politikası için: <a href="https://unsplash.com/privacy">unsplash.com/privacy</a></p>
+    <h2>Topladığımız Veriler</h2>
+    <p>Uygulamalarımızın çoğu kişisel veri toplamaz. Hesap açmanızı gerektirmez; adınızı, e-posta adresinizi, telefon numaranızı veya konumunuzu toplamayız. Uygulama içinde girdiğiniz bilgiler, aksi belirtilmedikçe yalnızca cihazınızda saklanır.</p>
 
-<h3>Hava Durumu Servisi</h3>
-<p>Bazı uygulamalarımız hava durumu bilgisi sağlamak amacıyla açık kaynaklı hava durumu servisleri kullanmaktadır. Bu işlem sırasında konum bilgisi yerine şehir adı kullanılır ve kişisel kimlik bilgisi paylaşılmaz.</p>
+    <h2>Yerel Veri Saklama</h2>
+    <p>Bazı uygulamalar verileri cihazınızda yerel olarak saklar (örneğin favoriler, notlar, kayıtlar). Bu veriler cihazınızdan çıkmaz; bizimle veya üçüncü taraflarla paylaşılmaz. İlgili uygulama iCloud senkronizasyonu sunuyorsa, veriler yalnızca sizin kendi özel iCloud hesabınızda tutulur ve geliştiricinin erişimine kapalıdır.</p>
 
-<h2>Veri Güvenliği</h2>
-<p>Tüm verileriniz cihazınızda güvenli şekilde saklanır. Verilerinizi üçüncü taraflara satmıyor veya paylaşmıyoruz.</p>
+    <h2>Yapay Zekâ Özellikleri</h2>
+    <p>Bazı uygulamalar, yapay zekâ özellikleri için Groq, Inc. hizmetini kullanır. Bu özellikleri kullandığınızda:</p>
+    <ul>
+      <li>Gönderdiğiniz metin veya içerik, işlenmek üzere Groq'un API'sine iletilir.</li>
+      <li>Groq, Inc. bu veriyi kendi gizlilik politikasına göre işler: <a href="https://groq.com/privacy-policy">groq.com/privacy-policy</a></li>
+      <li>Gönderdiğiniz içeriği kendi sunucularımızda saklamayız.</li>
+      <li>Yapay zekâ özellikleri yalnızca siz talep ettiğinizde çalışır. Hassas veya kişisel bilgi girmemeniz önerilir.</li>
+    </ul>
 
-<h2>İletişim</h2>
-<p>Sorularınız için: <a href="mailto:atilla@kuseyri.com">atilla@kuseyri.com</a></p>
+    <h2>Fotoğraf İçeriği</h2>
+    <p>Bazı uygulamalar (özellikle seyahat ve rehber uygulamaları) görselleri Unsplash hizmeti üzerinden çeker. Bu görseller Unsplash'in sunucularından yüklenir ve Unsplash'in gizlilik politikasına tabidir: <a href="https://unsplash.com/privacy">unsplash.com/privacy</a></p>
+
+    <h2>Üçüncü Taraf Hizmetler</h2>
+    <ul>
+      <li><strong>Groq, Inc.</strong> — yapay zekâ dil modeli işleme: <a href="https://groq.com/privacy-policy">groq.com/privacy-policy</a></li>
+      <li><strong>Unsplash</strong> — fotoğraf içeriği: <a href="https://unsplash.com/privacy">unsplash.com/privacy</a></li>
+      <li><strong>Apple iCloud</strong> — senkronizasyon sunan uygulamalarda, veriler kullanıcının kendi iCloud hesabında tutulur.</li>
+    </ul>
+
+    <h2>Reklam ve Takip</h2>
+    <p>Uygulamalarımız reklam göstermez, izleme (tracking) teknolojisi kullanmaz ve verilerinizi üçüncü taraflara satmaz.</p>
+
+    <h2>Çocukların Gizliliği</h2>
+    <p>Uygulamalarımız 13 yaş altı çocuklara yönelik değildir ve çocuklardan bilerek kişisel bilgi toplamayız.</p>
+
+    <h2>Değişiklikler</h2>
+    <p>Bu politika zaman zaman güncellenebilir. Değişiklikler, güncel tarihle bu sayfada yayımlanır.</p>
+
+    <div class="contact">
+      <strong>İletişim</strong>
+      <p>Sorularınız için: <a href="mailto:iletisim@atillakuseyri.com">iletisim@atillakuseyri.com</a></p>
+    </div>
+  </section>
+
+  <!-- ==================== ENGLISH ==================== -->
+  <section id="en" class="lang">
+    <p class="updated">Last updated: July 26, 2026</p>
+
+    <div class="lead">
+      This privacy policy applies to all apps developed by Atilla Kuseyri and published on the App Store.
+    </div>
+
+    <h2>Data We Collect</h2>
+    <p>Most of our apps do not collect any personal data. They do not require account registration, and we do not collect your name, email address, phone number, or location. Information you enter in an app is, unless otherwise stated, stored only on your device.</p>
+
+    <h2>Local Data Storage</h2>
+    <p>Some apps store data locally on your device (such as favorites, notes, or records). This data never leaves your device and is not shared with us or any third party. If an app offers iCloud sync, data is kept only in your own private iCloud account and is not accessible to the developer.</p>
+
+    <h2>AI-Powered Features</h2>
+    <p>Some apps use AI features powered by Groq, Inc. When you use these features:</p>
+    <ul>
+      <li>The text or content you submit is sent to Groq's API for processing.</li>
+      <li>Groq, Inc. processes this data under its own privacy policy: <a href="https://groq.com/privacy-policy">groq.com/privacy-policy</a></li>
+      <li>We do not store the content you send on our own servers.</li>
+      <li>AI features run only when you explicitly request them. Please avoid entering sensitive or personal information.</li>
+    </ul>
+
+    <h2>Photo Content</h2>
+    <p>Some apps (especially travel and guide apps) load images through the Unsplash service. These images are served from Unsplash and are subject to Unsplash's privacy policy: <a href="https://unsplash.com/privacy">unsplash.com/privacy</a></p>
+
+    <h2>Third-Party Services</h2>
+    <ul>
+      <li><strong>Groq, Inc.</strong> — AI language model processing: <a href="https://groq.com/privacy-policy">groq.com/privacy-policy</a></li>
+      <li><strong>Unsplash</strong> — photo content: <a href="https://unsplash.com/privacy">unsplash.com/privacy</a></li>
+      <li><strong>Apple iCloud</strong> — for apps that offer sync, data is kept in the user's own iCloud account.</li>
+    </ul>
+
+    <h2>Advertising and Tracking</h2>
+    <p>Our apps do not display ads, do not use tracking technology, and do not sell your data to third parties.</p>
+
+    <h2>Children's Privacy</h2>
+    <p>Our apps are not directed at children under 13. We do not knowingly collect personal information from children.</p>
+
+    <h2>Changes to This Policy</h2>
+    <p>We may update this policy from time to time. Changes will be posted on this page with an updated date.</p>
+
+    <div class="contact">
+      <strong>Contact</strong>
+      <p>For questions: <a href="mailto:iletisim@atillakuseyri.com">iletisim@atillakuseyri.com</a></p>
+    </div>
+  </section>
+
+</div>
+
+<footer>© 2026 Atilla Kuseyri</footer>
+
+<script>
+  function setLang(l) {
+    document.getElementById('tr').classList.toggle('active', l === 'tr');
+    document.getElementById('en').classList.toggle('active', l === 'en');
+    document.getElementById('btn-tr').classList.toggle('active', l === 'tr');
+    document.getElementById('btn-en').classList.toggle('active', l === 'en');
+    document.documentElement.lang = l;
+  }
+</script>
 </body>
 </html>

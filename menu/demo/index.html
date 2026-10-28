@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Konoba Školjka · Menu</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Manrope:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --wall:#f6f8f8; --surface:#ffffff; --ink:#14283a; --muted:#5d6f7d; --rule:#d9dfe2;
+  --sea:#0f3d5e; --sea-ink:#f2f6f8; --oleander:#c9466b; --olive:#56702f; --chip:#e7eef1;
+  color-scheme:light;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --wall:#0c1822; --surface:#122332; --ink:#e8eef2; --muted:#9db0bd; --rule:#23384a;
+    --sea:#1b5a85; --sea-ink:#f2f6f8; --oleander:#ef7b9b; --olive:#9cbc6a; --chip:#1a3042;
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --wall:#0c1822; --surface:#122332; --ink:#e8eef2; --muted:#9db0bd; --rule:#23384a;
+  --sea:#1b5a85; --sea-ink:#f2f6f8; --oleander:#ef7b9b; --olive:#9cbc6a; --chip:#1a3042;
+  color-scheme:dark;
+}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-padding-top:calc(env(safe-area-inset-top,0px) + 64px)}
+body{margin:0;background:var(--wall);color:var(--ink);font-family:"Manrope",system-ui,-apple-system,"Segoe UI",sans-serif;font-size:16px;line-height:1.5}
+.wrap{max-width:640px;margin:0 auto;padding:0 20px 48px}
+header{padding:28px 0 10px}
+.toprow{display:flex;justify-content:space-between;align-items:center;gap:12px}
+.mark{display:flex;align-items:center;gap:10px;color:var(--sea)}
+.mark svg{width:34px;height:34px}
+.langs{display:flex;border:1px solid var(--rule);border-radius:999px;overflow:hidden;background:var(--surface)}
+.langs button{font:inherit;font-size:.85rem;font-weight:700;padding:7px 12px;border:0;background:transparent;color:var(--muted);cursor:pointer}
+.langs button[aria-pressed="true"]{background:var(--sea);color:var(--sea-ink)}
+h1{font-family:"Fraunces",Georgia,serif;font-weight:600;font-size:clamp(2.4rem,10vw,3.4rem);line-height:1;margin:22px 0 6px;letter-spacing:-.5px}
+.tagline{color:var(--muted);margin:0 0 18px}
+.wave{display:block;width:100%;height:14px;color:var(--rule)}
+.catch{position:relative;margin:22px 0 8px;background:var(--sea);color:var(--sea-ink);border-radius:18px;padding:20px 20px 18px;overflow:hidden}
+.catch h2{font-family:"Fraunces",Georgia,serif;font-weight:600;font-size:1.5rem;margin:0 0 6px}
+.catch p{margin:0;max-width:34ch;opacity:.9}
+.catch .price{font-weight:700;margin-top:12px;display:inline-block;background:rgba(255,255,255,.14);padding:4px 10px;border-radius:999px}
+.catch svg{position:absolute;right:-6px;bottom:-4px;width:150px;height:auto;opacity:.22}
+nav.cats{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--wall);padding:10px 0;margin:10px -20px 0;padding-left:20px;padding-right:20px;display:flex;gap:8px;overflow-x:auto;scrollbar-width:none;border-bottom:1px solid var(--rule)}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--wall)}
+nav.cats::-webkit-scrollbar{display:none}
+nav.cats a{flex:none;text-decoration:none;color:var(--ink);background:var(--chip);padding:7px 14px;border-radius:999px;font-weight:600;font-size:.92rem}
+section{padding-top:22px}
+section h3{font-family:"Fraunces",Georgia,serif;font-weight:600;font-size:1.45rem;margin:0 0 8px}
+.item{padding:12px 0;border-bottom:1px dashed var(--rule)}
+.line{display:flex;align-items:baseline;gap:8px}
+.name{font-weight:700}
+.dots{flex:1;border-bottom:2px dotted var(--rule);transform:translateY(-4px);min-width:16px}
+.price{font-weight:700;white-space:nowrap;font-variant-numeric:tabular-nums}
+.desc{color:var(--muted);font-size:.93rem;margin:2px 0 0;max-width:52ch}
+.tags{display:inline-flex;gap:4px;margin-left:6px;vertical-align:1px}
+.t{font-size:.7rem;font-weight:700;border-radius:5px;padding:1px 5px;border:1px solid currentColor}
+.t.v{color:var(--olive)} .t.gf{color:var(--oleander)}
+.legend{display:flex;gap:14px;flex-wrap:wrap;color:var(--muted);font-size:.85rem;margin-top:18px}
+.info{margin-top:30px;display:grid;gap:12px}
+.cta{display:flex;align-items:center;justify-content:center;gap:10px;text-decoration:none;background:var(--oleander);color:#fff;font-weight:700;padding:15px;border-radius:14px;font-size:1.05rem}
+.box{background:var(--surface);border:1px solid var(--rule);border-radius:14px;padding:14px 16px}
+.box b{display:block;margin-bottom:2px}
+.box a{color:var(--sea);font-weight:700}
+:root[data-theme="dark"] .box a{color:#8cc4ea}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .box a{color:#8cc4ea}}
+.allergen{color:var(--muted);font-size:.9rem;margin-top:16px}
+.demo{margin-top:26px;text-align:center;color:var(--muted);font-size:.85rem}
+.demo a{color:inherit}
+button:focus-visible,a:focus-visible{outline:3px solid var(--oleander);outline-offset:2px}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <div class="toprow">
+    <div class="mark" aria-hidden="true">
+      <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M20 34c-8 0-14-6-14-13 0-1 .2-2 .5-3L20 6l13.5 12c.3 1 .5 2 .5 3 0 7-6 13-14 13z"/><path d="M20 34V8M20 34l-8-24M20 34l8-24M20 34L9 15M20 34l11-19"/></svg>
+    </div>
+    <div class="langs" role="group" aria-label="Language" id="langs">
+      <button data-l="en" aria-pressed="true">EN</button>
+      <button data-l="me" aria-pressed="false">ME</button>
+      <button data-l="ru" aria-pressed="false">RU</button>
+    </div>
+  </div>
+  <h1>Konoba Školjka</h1>
+  <p class="tagline" data-ui="tag"></p>
+  <svg class="wave" viewBox="0 0 600 14" preserveAspectRatio="none" aria-hidden="true"><path d="M0 7 Q 15 0 30 7 T 60 7 T 90 7 T 120 7 T 150 7 T 180 7 T 210 7 T 240 7 T 270 7 T 300 7 T 330 7 T 360 7 T 390 7 T 420 7 T 450 7 T 480 7 T 510 7 T 540 7 T 570 7 T 600 7" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+  <div class="catch">
+    <h2 data-ui="special"></h2>
+    <p data-ui="specialText"></p>
+    <span class="price" data-ui="specialPrice"></span>
+    <svg viewBox="0 0 160 80" fill="currentColor" aria-hidden="true"><path d="M10 40c20-26 60-34 96-16l20-18c3-3 8-1 7 4l-6 30 6 30c1 5-4 7-7 4l-20-18C70 74 30 66 10 40z"/><circle cx="40" cy="36" r="5" fill="#0f3d5e"/></svg>
+  </div>
+</header>
+<nav class="cats" id="cats" aria-label="Menu sections"></nav>
+<main id="menu"></main>
+<div class="legend" id="legend"></div>
+<p class="allergen" data-ui="allergen"></p>
+<div class="info">
+  <a class="cta" id="reserve" href="https://wa.me/38267000000?text=Hello%2C%20I%27d%20like%20to%20reserve%20a%20table" target="_blank" rel="noopener">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18a8 8 0 0 1-4.1-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8 8 0 1 1 12 20zm4.4-5.9c-.2-.1-1.4-.7-1.7-.8-.2-.1-.4-.1-.5.1l-.8 1c-.1.2-.3.2-.5.1a6.6 6.6 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.5-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.1 5.1 0 0 0 1.1 2.7 11.7 11.7 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6.5-.1 1.4-.6 1.6-1.2.2-.6.2-1.1.1-1.2l-.5-.3z"/></svg>
+    <span data-ui="reserve"></span>
+  </a>
+  <div class="box"><b data-ui="hours"></b></div>
+  <div class="box"><b data-ui="find"></b><span data-ui="findText"></span> · <a href="https://maps.google.com/?q=Citadela+Budva" target="_blank" rel="noopener">Google Maps</a></div>
+</div>
+<p class="demo" data-ui="demo"></p>
+<p class="demo">Konoba Školjka is a fictional restaurant. Menu page by Atilla Kuseyri, Budva.</p>
+</div>
+<script>
+const DATA = {"items": [{"cat": "breakfast", "price": 6.5, "tags": ["v"], "t": {"en": ["Montenegrin breakfast", "Fresh cheese, kajmak, smoked ham, olives, tomato and warm bread"], "me": ["Crnogorski doručak", "Mladi sir, kajmak, pršut, masline, paradajz i topao hljeb"], "ru": ["Черногорский завтрак", "Молодой сыр, каймак, пршут, оливки, помидоры и тёплый хлеб"]}}, {"cat": "breakfast", "price": 5.0, "tags": ["v"], "t": {"en": ["Eggs with kajmak", "Two eggs baked in kajmak, served with bread"], "me": ["Jaja u kajmaku", "Dva jaja pečena u kajmaku, uz hljeb"], "ru": ["Яйца с каймаком", "Два яйца, запечённые в каймаке, с хлебом"]}}, {"cat": "starters", "price": 9.0, "tags": ["gf"], "t": {"en": ["Njeguški pršut & cheese", "Air-dried ham from Njeguši with aged cow's cheese and olives"], "me": ["Njeguški pršut i sir", "Pršut iz Njeguša sa zrelim kravljim sirom i maslinama"], "ru": ["Негушский пршут и сыр", "Вяленая ветчина из Негуши с выдержанным коровьим сыром и оливками"]}}, {"cat": "starters", "price": 11.0, "tags": [], "t": {"en": ["Mussels buzara", "Boka Bay mussels in white wine, garlic and parsley"], "me": ["Dagnje na buzaru", "Dagnje iz Boke u bijelom vinu, bijelom luku i peršunu"], "ru": ["Мидии бузара", "Мидии из Бока-Которской бухты в белом вине с чесноком и петрушкой"]}}, {"cat": "starters", "price": 7.5, "tags": ["v", "gf"], "t": {"en": ["Shopska salad", "Tomato, cucumber, pepper, onion and grated white cheese"], "me": ["Šopska salata", "Paradajz, krastavac, paprika, luk i rendani bijeli sir"], "ru": ["Шопский салат", "Помидоры, огурцы, перец, лук и тёртый белый сыр"]}}, {"cat": "mains", "price": 0, "tags": ["gf"], "t": {"en": ["Catch of the day", "Grilled whole, with Swiss chard and potatoes. Price per kg, ask your waiter"], "me": ["Riba dana", "Na žaru, cijela, uz blitvu i krompir. Cijena po kg, pitajte konobara"], "ru": ["Улов дня", "Целая рыба на гриле, с мангольдом и картофелем. Цена за кг, уточните у официанта"]}}, {"cat": "mains", "price": 16.0, "tags": [], "t": {"en": ["Black risotto", "Cuttlefish ink risotto, the Adriatic classic"], "me": ["Crni rižoto", "Rižoto sa sipom u njenom crnilu, jadranski klasik"], "ru": ["Чёрное ризотто", "Ризотто с каракатицей в собственных чернилах, классика Адриатики"]}}, {"cat": "mains", "price": 18.0, "tags": ["gf"], "t": {"en": ["Grilled squid", "With garlic, parsley and olive oil, Swiss chard on the side"], "me": ["Lignje na žaru", "Sa bijelim lukom, peršunom i maslinovim uljem, uz blitvu"], "ru": ["Кальмары на гриле", "С чесноком, петрушкой и оливковым маслом, на гарнир мангольд"]}}, {"cat": "mains", "price": 15.0, "tags": ["gf"], "t": {"en": ["Lamb under the bell", "Slow-cooked under a sač with potatoes. Order 2 hours ahead"], "me": ["Jagnjetina ispod sača", "Sporo pečena ispod sača sa krompirom. Naručiti 2 sata ranije"], "ru": ["Ягнёнок под сачем", "Томлёный под сачем с картофелем. Заказ за 2 часа"]}}, {"cat": "mains", "price": 12.0, "tags": ["v"], "t": {"en": ["Vegetable pljeskavica", "Grilled vegetable and cheese patty with ajvar and lepinja"], "me": ["Povrtna pljeskavica", "Pljeskavica od povrća i sira sa ajvarom i lepinjom"], "ru": ["Овощная плескавица", "Котлета из овощей и сыра на гриле с айваром и лепиньей"]}}, {"cat": "desserts", "price": 5.0, "tags": ["v"], "t": {"en": ["Palačinke", "Thin pancakes with walnuts and honey"], "me": ["Palačinke", "Sa orasima i medom"], "ru": ["Палачинке", "Тонкие блины с грецкими орехами и мёдом"]}}, {"cat": "desserts", "price": 5.5, "tags": ["v"], "t": {"en": ["Priganice", "Small fried dough balls with honey and fig jam"], "me": ["Priganice", "Uštipci sa medom i džemom od smokve"], "ru": ["Приганице", "Маленькие пончики с мёдом и инжирным вареньем"]}}, {"cat": "drinks", "price": 2.0, "tags": [], "t": {"en": ["Espresso", "Short and strong"], "me": ["Espreso", "Kratak i jak"], "ru": ["Эспрессо", "Короткий и крепкий"]}}, {"cat": "drinks", "price": 4.5, "tags": [], "t": {"en": ["Vranac, glass", "Montenegro's signature red wine"], "me": ["Vranac, čaša", "Crnogorsko crno vino"], "ru": ["Вранац, бокал", "Фирменное красное вино Черногории"]}}, {"cat": "drinks", "price": 4.5, "tags": [], "t": {"en": ["Krstač, glass", "Crisp local white wine"], "me": ["Krstač, čaša", "Svježe domaće bijelo vino"], "ru": ["Крстач, бокал", "Свежее местное белое вино"]}}, {"cat": "drinks", "price": 3.5, "tags": [], "t": {"en": ["Nikšićko beer 0.5 l", "Local lager"], "me": ["Nikšićko pivo 0,5 l", "Domaće svijetlo pivo"], "ru": ["Пиво Никшичко 0,5 л", "Местный лагер"]}}, {"cat": "drinks", "price": 3.0, "tags": [], "t": {"en": ["Homemade lemonade", "Fresh lemon and mint"], "me": ["Domaća limunada", "Svježi limun i nana"], "ru": ["Домашний лимонад", "Свежий лимон и мята"]}}], "cats": {"breakfast": {"en": "Breakfast", "me": "Doručak", "ru": "Завтрак"}, "starters": {"en": "Starters", "me": "Predjela", "ru": "Закуски"}, "mains": {"en": "Mains", "me": "Glavna jela", "ru": "Основные блюда"}, "desserts": {"en": "Desserts", "me": "Dezerti", "ru": "Десерты"}, "drinks": {"en": "Drinks", "me": "Pića", "ru": "Напитки"}}, "ui": {"en": {"tag": "Seafood konoba in Budva Old Town", "special": "Today’s catch", "specialText": "Sea bream and red mullet from this morning’s boats. Grilled whole, with Swiss chard.", "specialPrice": "€ 58 / kg", "reserve": "Reserve a table", "hours": "Open daily 9:00–24:00", "find": "Find us", "findText": "Near the Citadel, Budva Old Town", "allergen": "Please tell us about any allergies.", "v": "vegetarian", "gf": "gluten free", "ask": "ask", "demo": "Demo menu. Your restaurant could look like this.", "lang": "Language"}, "me": {"tag": "Riblja konoba u Starom gradu Budva", "special": "Ulov dana", "specialText": "Orada i barbun sa jutrošnjih brodova. Na žaru, cijeli, uz blitvu.", "specialPrice": "€ 58 / kg", "reserve": "Rezervišite sto", "hours": "Radimo svaki dan 9:00–24:00", "find": "Gdje smo", "findText": "Kod Citadele, Stari grad Budva", "allergen": "Molimo vas da nam kažete ako imate alergije.", "v": "vegetarijansko", "gf": "bez glutena", "ask": "pitajte", "demo": "Demo meni. Vaš restoran može izgledati ovako.", "lang": "Jezik"}, "ru": {"tag": "Рыбная коноба в Старом городе Будвы", "special": "Улов дня", "specialText": "Дорада и барабулька с утренних лодок. Целиком на гриле, с мангольдом.", "specialPrice": "€ 58 / кг", "reserve": "Забронировать стол", "hours": "Ежедневно 9:00–24:00", "find": "Как нас найти", "findText": "У Цитадели, Старый город Будвы", "allergen": "Пожалуйста, сообщите нам об аллергиях.", "v": "вегетарианское", "gf": "без глютена", "ask": "уточняйте", "demo": "Демо-меню. Ваш ресторан может выглядеть так.", "lang": "Язык"}}};
+const order = ["breakfast","starters","mains","desserts","drinks"];
+let lang = "en";
+try { const s = localStorage.getItem("menuLang"); if (s && DATA.ui[s]) lang = s; } catch(e) {}
+const nav = navigator.language ? navigator.language.slice(0,2) : "en";
+try { if (!localStorage.getItem("menuLang")) { if (nav === "ru") lang = "ru"; if (["sr","bs","hr","me"].includes(nav)) lang = "me"; } } catch(e) {}
+
+function esc(s){ return String(s).replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c])); }
+function priceText(p){ return p ? "€ " + p.toFixed(2).replace(/\.00$/, "").replace(".", lang === "en" ? "." : ",") : DATA.ui[lang].ask; }
+
+function render(){
+  const ui = DATA.ui[lang];
+  document.documentElement.lang = lang === "me" ? "sr-Latn-ME" : lang;
+  document.querySelectorAll("[data-ui]").forEach(el => { el.textContent = ui[el.dataset.ui]; });
+  document.querySelectorAll("#langs button").forEach(b => b.setAttribute("aria-pressed", String(b.dataset.l === lang)));
+  document.getElementById("cats").innerHTML = order.map(c => `<a href="#${c}">${esc(DATA.cats[c][lang])}</a>`).join("");
+  document.getElementById("menu").innerHTML = order.map(c => {
+    const rows = DATA.items.filter(i => i.cat === c).map(i => {
+      const [name, desc] = i.t[lang];
+      const tags = i.tags.map(t => `<span class="t ${t}" title="${esc(ui[t])}">${t === "v" ? "V" : "GF"}</span>`).join("");
+      return `<div class="item"><div class="line"><span class="name">${esc(name)}${tags ? `<span class="tags">${tags}</span>` : ""}</span><span class="dots"></span><span class="price">${esc(priceText(i.price))}</span></div><p class="desc">${esc(desc)}</p></div>`;
+    }).join("");
+    return `<section id="${c}"><h3>${esc(DATA.cats[c][lang])}</h3>${rows}</section>`;
+  }).join("");
+  document.getElementById("legend").innerHTML =
+    `<span><span class="t v">V</span> ${esc(ui.v)}</span><span><span class="t gf">GF</span> ${esc(ui.gf)}</span>`;
+}
+document.getElementById("langs").addEventListener("click", e => {
+  const b = e.target.closest("button[data-l]"); if (!b) return;
+  lang = b.dataset.l; try { localStorage.setItem("menuLang", lang); } catch(err) {}
+  render();
+});
+render();
+</script>
+</body>
+</html>
